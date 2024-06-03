@@ -1,5 +1,8 @@
 package com.distribuida.entities;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Autor {
 	
 	//Atributos
@@ -10,7 +13,7 @@ public class Autor {
 	private String direccion;
 	private String telefono;
 	private String correo;
-	//hola como estas
+	
 	
 	public Autor(){}
 	
