@@ -19,6 +19,6 @@ public interface ClienteDAO {
 	public void dell (Cliente cliente);
 	
 	
-	//CRUD avanzados
+	//CRUD avansados
 	
 }

@@ -10,10 +10,15 @@ public class FacturaDetalle {
 	private float subtotal;
 	private Factura factura;
 	private Libro libro;
+	
+	public FacturaDetalle () {}
+	
 	public FacturaDetalle(int facturaDetalle, int cantidad, float subtotal, int idFactura, int idLibro) {
 		this.idfacturaDetalle = facturaDetalle;
 		this.cantidad = cantidad;
 		this.subtotal = subtotal;
+		
+		
 		
 	}
 	public int getFacturaDetalle() {
