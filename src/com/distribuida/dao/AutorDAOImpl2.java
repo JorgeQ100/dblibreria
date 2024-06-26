@@ -22,6 +22,7 @@ public class AutorDAOImpl2 implements AutorDAO {
 	//select au from Autor au;
 	//FROM Autor;
 	//192.168.4.175 Y 127
+	//Soy pendejo
 	
 	@Autowired
 	private SessionFactory sessionFactory;
