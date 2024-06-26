@@ -17,7 +17,7 @@ public interface ClienteDAO {
 	
 	public void up (Cliente cliente);
 	
-	public void dell (Cliente cliente);
+	public void dell (int id);
 	
 	
 	//CRUD avansados

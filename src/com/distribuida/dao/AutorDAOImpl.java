@@ -25,6 +25,13 @@ public class AutorDAOImpl implements AutorDAO {
 		Session session = sessionFactory.getCurrentSession();
 		return session.createQuery("from Autor", Autor.class).getResultList();
 	}
+	
+	@Override
+	public Autor findOne(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 
 	@Override
 	public void add(Autor autor) {
@@ -39,7 +46,7 @@ public class AutorDAOImpl implements AutorDAO {
 	}
 
 	@Override
-	public void dell(Autor autor) {
+	public void dell(int id ) {
 		// TODO Auto-generated method stub
 
 	}

@@ -20,13 +20,27 @@ public class PrincipalCliente {
 		
 		ClienteDAO clienteDAO = context.getBean("clienteDAOimpll", ClienteDAO.class);
 		
+		//CRUD:  CREATE, READ, UPDATE, DELETE
 		
-		List<Cliente> clientes= clienteDAO.findALL();
+		//ADD
+		Cliente cliente = new Cliente(0,"taipe","1750866814","jyaipe203@correo.com","av. por ahi..","Juan","099285033");
+		clienteDAO.add(cliente);
 		
-		clientes.forEach(item ->{
-			System.out.println(item.toString());	
-		});
-			
+		//UP
+		//Cliente cliente2 = new Cliente(1,"122568482","juan","taipe2","av. pot ahi..","099285033","jyaipe203@correo.com");
+		//clienteDAO.up(cliente2);
+		
+		//dell
+		//clienteDAO.dell(1);
+		System.out.println("********************* DEL ***********"+clienteDAO.findOne(1));
+		
+		//finALL
+		//
+		clienteDAO.findALL().forEach(item -> {System.out.println(item.toString());});
+		
+		
+		
+		
 		
 		
 		

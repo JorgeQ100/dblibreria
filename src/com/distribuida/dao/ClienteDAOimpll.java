@@ -1,7 +1,6 @@
 package com.distribuida.dao;
 
 import java.util.List;
-
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -27,26 +26,37 @@ public class ClienteDAOimpll implements ClienteDAO {
 	}
 
 	@Override
+	@Transactional
 	public Cliente findOne(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		Session session = ssessionFactory.getCurrentSession();
+		return session.get(Cliente.class, id);
 	}
 
 	@Override
+	@Transactional
 	public void add(Cliente cliente) {
 		// TODO Auto-generated method stub
+		Session session = ssessionFactory.getCurrentSession();
+		session.saveOrUpdate(cliente);
 
 	}
 
 	@Override
+	@Transactional
 	public void up(Cliente cliente) {
 		// TODO Auto-generated method stub
+		Session session = ssessionFactory.getCurrentSession();
+		session.saveOrUpdate(cliente);
 
 	}
 
 	@Override
-	public void dell(Cliente cliente) {
+	@Transactional
+	public void dell(int id) {
 		// TODO Auto-generated method stub
+		Session session = ssessionFactory.getCurrentSession();
+		session.delete(findOne(id));
 
 	}
 
