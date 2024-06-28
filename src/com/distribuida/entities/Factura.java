@@ -1,17 +1,44 @@
 package com.distribuida.entities;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@Entity
+@Table(name = "factura")
 public class Factura {
 	
+	
+	
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_factura")
 	private int idFactura;
+	@Column(name = "num_factura")
 	private String numFactura;
+	@Column(name = "fecha")
 	private Date fecha;
+	@Column(name = "total_neto")
 	private double totalNeto;
+	@Column(name = "iva")
 	private double iva;
+	@Column(name = "total")
 	private double total;
+	
+	@JoinColumn(name = "id_cliente")
+	@ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	private Cliente cliente;
 	
 	

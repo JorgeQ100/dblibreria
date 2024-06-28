@@ -14,15 +14,21 @@ import com.distribuida.entities.Categoria;
 @Repository
 public class CategoriaDAOImpl implements CategoriaDAO {
 
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
 	@Override
 	@Transactional
 	public List<Categoria> finALL() {
-		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		return session.createQuery("from Categoria", Categoria.class).getResultList();
+		return session.createQuery("SELECT au FROM Categoria cat", Categoria.class).getResultList();
+	}
+
+	@Override
+	public Categoria findOne(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -32,15 +38,17 @@ public class CategoriaDAOImpl implements CategoriaDAO {
 	}
 
 	@Override
-	public void up(Categoria  categoria) {
+	public void up(Categoria categoria) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void dell(Categoria categoria) {
+	public void dell(int id) {
 		// TODO Auto-generated method stub
 
 	}
+
+
 
 }
