@@ -26,6 +26,23 @@ public class Libro {
 	
 	public Libro() {}
 	
+	/**
+	 * @param idLibro
+	 * @param titulo
+	 * @param editorial
+	 * @param numPaginas
+	 * @param edicion
+	 * @param idioma
+	 * @param fechaPublicacion
+	 * @param descripcion
+	 * @param tipoPasta
+	 * @param iSBN
+	 * @param numEjemplares
+	 * @param portada
+	 * @param presentacion
+	 * @param precio
+	 */
+	
 	public Libro(int idLibro, String titulo, String editorial, int numPaginas, String edicion, String idioma,
 			Date fechaPublicacion, String descripcion, String tipoPasta, String iSBN, int numEjemplares, String portada,
 			String presentacion, float precio) {
@@ -38,7 +55,7 @@ public class Libro {
 		this.fechaPublicacion = fechaPublicacion;
 		this.descripcion = descripcion;
 		this.tipoPasta = tipoPasta;
-		ISBN = iSBN;
+		this.ISBN = iSBN;
 		this.numEjemplares = numEjemplares;
 		this.portada = portada;
 		this.presentacion = presentacion;
