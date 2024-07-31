@@ -2,6 +2,7 @@ package com.distribuida.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,14 +15,14 @@ import com.distribuida.dao.ClienteDAO;
 import com.distribuida.entities.Cliente;
 
 @Controller
-@RequestMapping("/clientes")       //paht principal
+@RequestMapping("/clientes")       //path principal
 public class ClienteController {
 	
 	// JSP .- Java Server Page, son las poaginas web de tecnologia java
-	
+	@Autowired
 	private ClienteDAO clienteDAO;
 	
-	@GetMapping("/findAll")        //paht secundario
+	@GetMapping("/findAll")        //path secundario
 	public String findAll (Model model) {
 		
 		//try {
@@ -87,7 +88,7 @@ public class ClienteController {
 					Cliente cliente2 = new Cliente(idCliente, correo, nombre, apellido, direccion, direccion, correo);
 					clienteDAO.up(cliente2); 
 				}
-				return "redirect:/clientes/finDALL";  //IR A FROMULARIO WEB POR PATH O URL
+				return "redirect:/clientes/findAll";  //IR A FROMULARIO WEB POR PATH O URL
 				
 		//} catch (Exception e) {
 			// TODO: handle exception
@@ -104,7 +105,7 @@ public class ClienteController {
 		//try {
 			
 			clienteDAO.dell(idCliente);
-			return "redirect:/clientes/finDALL";
+			return "redirect:/clientes/findAll";
 			
 		//} catch (Exception e) {
 			// TODO: handle exception
